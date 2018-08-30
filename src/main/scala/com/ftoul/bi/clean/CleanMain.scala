@@ -17,7 +17,7 @@ object CleanMain {
     System.arraycopy(args,1,inputPaths,0,argLen-2)
     var outputPath = args(argLen-1)
 
-    val conf = new SparkConf().setAppName("CleanMain").setMaster("local[2]")
+    val conf = new SparkConf().setAppName("CleanMain")
     val sc = new SparkContext(conf)
     val rowParser: RowParser = new RowParser(cleanConfFile)
     inputPaths.foreach(path => {
